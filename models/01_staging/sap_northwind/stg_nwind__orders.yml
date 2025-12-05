@@ -1,0 +1,7 @@
+models:
+  - name: stg_nwind__orders
+    description: Esse modelo é sobre ordens
+    columns:
+      - name: order_pk
+        tests:
+          - unique
