@@ -31,5 +31,4 @@ with
         from order_items
         inner join orders on order_items.order_fk = orders.order_pk
     )
-
 select * from joined

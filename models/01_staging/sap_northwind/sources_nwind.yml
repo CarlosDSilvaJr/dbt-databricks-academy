@@ -16,4 +16,29 @@ sources:
           - name: customer_id      
             description: Chave estrangeira para se conectar com a tabela customers
       - name: order_details
+
+      - name: products
+        description: Dimensão de produtos com atributos de categorias e fornecedores (SCD Tipo 2)
+        columns:
+          - name: product_sk
+            description: Chave substituta da dimensão
+            tests:
+              - unique
+              - not_null
+          - name: product_id
+            description: Chave natural do sistema OLTP
+            tests:
+              - not_null
+          - name: product_name
+            description: Nome do produto
+          - name: category_name
+            description: Categoria associada ao produto
+          - name: supplier_name
+            description: Fornecedor do produto
+      - name: categories
+        description: categoria do produto
+      - name: suppliers
+        description: Fornecedores 
+      - name: stg_nwind__products
+        
       
