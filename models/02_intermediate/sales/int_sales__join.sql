@@ -13,21 +13,22 @@ with
         select
             order_items.order_item_sk
             , order_items.product_fk
+            , order_items.discount_pct
+            , order_items.unit_price
+            , order_items.quantity
+
             , orders.employee_fk
             , orders.customer_fk
             , orders.shipper_fk
             , orders.order_date
             , orders.shipped_date
             , orders.required_delivery_date
-            , order_items.discount_pct
-            , order_items.unit_price
-            , order_items.quantity
-            , orders.freight
             , orders.order_number
             , orders.recipient_name
             , orders.recipient_city
             , orders.recipient_region
             , orders.recipient_country
+            , orders.freight
         from order_items
         inner join orders on order_items.order_fk = orders.order_pk
     )
