@@ -23,9 +23,11 @@ with
             , products.units_on_order
             , products.reorder_level
             , products.discontinued
+
             , suppliers.supplier_name
             , suppliers.supplier_city
             , suppliers.supplier_country
+            
             , categories.category_name
             , categories.category_description
         from products
